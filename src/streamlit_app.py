@@ -1,6 +1,7 @@
 import os, joblib
 import streamlit as st
 import pandas as pd, joblib, json
+from pathlib import Path
 
 st.set_page_config(page_title="VO₂ Max & Training Readiness", page_icon="🏃", layout="centered")
 st.title("🏃 VO₂ Max & Training Readiness (Synthetic, Demo)")
