@@ -89,6 +89,7 @@ speed_per_kg = avg_speed_kmh / (weight_kg/70.0)
 features = {
  "sex":sex,"age":age,"height_cm":height_cm,"weight_kg":weight_kg,
  "bmi": weight_kg/((height_cm/100.0)**2),
+ "total_lean_mass":total_lean_mass,"wbtpf":wbtpf,
  "resting_hr":resting_hr,"max_hr":max_hr,"avg_hr_during_run":avg_hr_during_run,
  "hr_recovery_1min":hr_recovery_1min,
  "distance_km":distance_km,"duration_min":duration_min,
