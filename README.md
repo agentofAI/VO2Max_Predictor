@@ -35,6 +35,20 @@ model/vo2_predictor.joblib: The saved machine learning pipeline.
 app/app.py: (Assuming this is your Streamlit app file based on the requirements.txt) The Streamlit application code.
 This notebook: Contains the code for data loading, cleaning, model training, evaluation, saving, and a function for generating coaching tips.
 
+vo2max-readiness-ai/
+├─ app/app.py
+├─ assets/Baseline_Data_Insight1b # Original dataset 
+├─ assets/vo2_real_augmented.csv  # Synthetic dataset 
+├─ model/vo2_predictor.joblib
+├─ src/VO2Max_Data_Wrangler.ipynb
+├─ src/VO2Max_Data_Predictor.ipynb                 # your Colab-exported notebook
+├─ requirements.txt
+└─ README.md
+
+Citation
+Larsen, Ryan; Hillman, Charles; Kramer, Arthur; Cohen, Neal; Barbey, Aron. (2021). Magnetic Resonance Spectroscopy Imaging, Body Composition, and Cardiorespiratory Fitness: Baseline Data from a Multimodal Intervention Study. University of Illinois at Urbana-Champaign. https://doi.org/10.13012/B2IDB-9371397_V1
+_]()
+
 Setup and Usage
 Clone the repository:
   cd <project_directory>
