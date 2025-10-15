@@ -7,7 +7,7 @@ st.set_page_config(page_title="VO₂ Max & Training Readiness", page_icon="🏃"
 st.title("🏃 VO₂ Max & Training Readiness (Synthetic, Demo)")
 st.caption("CPU-only • Synthetic data • Not medical advice.")
 
-DATA_PATH = "assets/vo2_real_augmented.csv"
+#DATA_PATH = "assets/vo2_real_augmented.csv"
 
 #MODEL_PATH = "model/vo2_predictor.joblib"
 #MODEL_PATH = os.path.join(os.path.dirname(__file__), "..", "model", "vo2_predictor.joblib")
@@ -15,6 +15,8 @@ DATA_PATH = "assets/vo2_real_augmented.csv"
 HERE = Path(__file__).resolve().parent
 MODEL_PATH = HERE / "model" / "vo2_predictor.joblib"   # src/model/...
 # If your model is at repo_root/model, use: HERE.parent / "model" / "vo2_predictor.joblib"
+
+DATA_PATH = HERE / .. / "assets" / "vo2_real_augmented.csv"
 
 print("CWD:", os.getcwd())
 print("Script dir:", HERE)
@@ -25,17 +27,13 @@ assert MODEL_PATH.exists(), f"Model not found at: {MODEL_PATH}"
 
 pipe = joblib.load(MODEL_PATH)
 
-
 @st.cache_resource
 def load_model():
     return joblib.load(MODEL_PATH)
 
 pipe = load_model()
 
-
 @st.cache_data
-
-"""
 def load_sample():
     try:
         df = pd.read_csv(DATA_PATH)
@@ -45,12 +43,12 @@ def load_sample():
 
 df = load_sample()
 
-with st.expander("Sample data (first 50 rows)"):
+with st.expander("Sample data (first 10 rows)"):
     if not df.empty:
-        st.dataframe(df.head(50), use_container_width=True)
+        st.dataframe(df.head(10), use_container_width=True)
     else:
         st.info("Sample CSV not found.")
-"""
+
 
 st.subheader("Enter runner metrics")
 cols = st.columns(2)
