@@ -30,7 +30,12 @@ pipe = joblib.load(MODEL_PATH)
 def load_model():
     return joblib.load(MODEL_PATH)
 
+pipe = load_model()
+
+
 @st.cache_data
+
+"""
 def load_sample():
     try:
         df = pd.read_csv(DATA_PATH)
@@ -38,7 +43,6 @@ def load_sample():
     except Exception:
         return pd.DataFrame()
 
-pipe = load_model()
 df = load_sample()
 
 with st.expander("Sample data (first 50 rows)"):
@@ -46,6 +50,7 @@ with st.expander("Sample data (first 50 rows)"):
         st.dataframe(df.head(50), use_container_width=True)
     else:
         st.info("Sample CSV not found.")
+"""
 
 st.subheader("Enter runner metrics")
 cols = st.columns(2)
