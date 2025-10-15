@@ -16,7 +16,7 @@ HERE = Path(__file__).resolve().parent
 MODEL_PATH = HERE / "model" / "vo2_predictor.joblib"   # src/model/...
 # If your model is at repo_root/model, use: HERE.parent / "model" / "vo2_predictor.joblib"
 
-DATA_PATH = HERE / .. / "assets" / "vo2_real_augmented.csv"
+DATA_PATH = HERE / ".." / "assets" / "vo2_real_augmented.csv"
 
 print("CWD:", os.getcwd())
 print("Script dir:", HERE)
