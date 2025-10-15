@@ -1,3 +1,4 @@
+import os, joblib
 import streamlit as st
 import pandas as pd, joblib, json
 
@@ -5,8 +6,24 @@ st.set_page_config(page_title="VO₂ Max & Training Readiness", page_icon="🏃"
 st.title("🏃 VO₂ Max & Training Readiness (Synthetic, Demo)")
 st.caption("CPU-only • Synthetic data • Not medical advice.")
 
-MODEL_PATH = "model/vo2_predictor.joblib"
-DATA_PATH = "assets/vo2max_synthetic.csv"
+DATA_PATH = "assets/vo2_real_augmented.csv"
+
+#MODEL_PATH = "model/vo2_predictor.joblib"
+#MODEL_PATH = os.path.join(os.path.dirname(__file__), "..", "model", "vo2_predictor.joblib")
+
+HERE = Path(__file__).resolve().parent
+MODEL_PATH = HERE / "model" / "vo2_predictor.joblib"   # src/model/...
+# If your model is at repo_root/model, use: HERE.parent / "model" / "vo2_predictor.joblib"
+
+print("CWD:", os.getcwd())
+print("Script dir:", HERE)
+print("Listing script dir:", list(HERE.iterdir()))
+print("Listing model dir:", list((HERE / "model").glob("*")))
+
+assert MODEL_PATH.exists(), f"Model not found at: {MODEL_PATH}"
+
+pipe = joblib.load(MODEL_PATH)
+
 
 @st.cache_resource
 def load_model():
