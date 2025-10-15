@@ -5,8 +5,8 @@ st.set_page_config(page_title="VO₂ Max & Training Readiness", page_icon="🏃"
 st.title("🏃 VO₂ Max & Training Readiness (Synthetic, Demo)")
 st.caption("CPU-only • Synthetic data • Not medical advice.")
 
-MODEL_PATH = "model/vo2_predictor.joblib"
-DATA_PATH = "assets/vo2max_synthetic.csv"
+MODEL_PATH = "../model/vo2_predictor.joblib"
+DATA_PATH = "../assets/vo2max_synthetic.csv"
 
 @st.cache_resource
 def load_model():
