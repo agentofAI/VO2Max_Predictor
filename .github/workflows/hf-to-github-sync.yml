@@ -1,0 +1,19 @@
+name: Sync Hugging Face Space → GitHub
+on:
+  schedule:
+    - cron: "0 */12 * * *"   # every 12 hours
+  workflow_dispatch:        # allow manual run
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone Hugging Face Space
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          git clone https://VcRlAgent:${HF_TOKEN}@huggingface.co/spaces/VcRlAgent/VO2Max_Predictor
+          cd space
+          git remote remove origin
+          git remote add github https://agentofAI:${{ secrets.HF_SYNC_TOKEN }}@github.com/agentofAI/VO2Max_Predictor.git
+          git push github main --force
