@@ -55,6 +55,9 @@ age = cols[1].slider("Age", 18, 70, 35)
 height_cm = cols[0].slider("Height (cm)", 150, 200, 172)
 weight_kg = cols[1].slider("Weight (kg)", 45, 120, 74)
 
+total_lean_mass = cols[0].slider("Total Lean Mass", 30, 90, 55)
+wbtpf = cols[1].slider("Whole Body Tissue Percent Fat", 12, 49, 28)
+
 resting_hr = cols[0].slider("Resting HR (bpm)", 40, 100, 60)
 max_hr = cols[1].slider("Max HR (bpm)", 150, 205, 185)
 avg_hr_during_run = cols[0].slider("Avg HR During Run (bpm)", 95, 190, 150)
