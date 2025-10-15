@@ -36,12 +36,12 @@ app/app.py: (Assuming this is your Streamlit app file based on the requirements.
 This notebook: Contains the code for data loading, cleaning, model training, evaluation, saving, and a function for generating coaching tips.
 
 vo2max-readiness-ai/
-├─ app/app.py
-├─ assets/Baseline_Data_Insight1b # Original dataset 
-├─ assets/vo2_real_augmented.csv  # Synthetic dataset 
-├─ model/vo2_predictor.joblib
-├─ src/VO2Max_Data_Wrangler.ipynb
-├─ src/VO2Max_Data_Predictor.ipynb                 # your Colab-exported notebook
+├─ src/streamlit_app.py
+├─ src/VO2Max_Data_Wrangler.ipynb	# Data Wrangling and Feature Engineering
+├─ src/VO2Max_Data_Predictor.ipynb	# ML Predictor Notebook
+├─ assets/Baseline_Data_Insight1b	# Original dataset 
+├─ assets/vo2_real_augmented.csv	# Synthetic dataset 
+├─ model/vo2_predictor.joblib		# Trained Model binary
 ├─ requirements.txt
 └─ README.md
 
